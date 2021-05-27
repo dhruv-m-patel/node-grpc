@@ -1,0 +1,19 @@
+{
+  "name": "grpc-examples",
+  "version": "0.1.0",
+  "scripts": {
+    "dynamic:server": "node ./dynamic_codegen/greeter_server.js",
+    "dynamic:client": "node ./dynamic_codegen/greeter_client.js",
+    "static:server": "node ./static_codegen/greeter_server.js",
+    "static:client": "node ./static_codegen/greeter_client.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.1.0",
+    "@grpc/proto-loader": "^0.5.0",
+    "async": "^1.5.2",
+    "google-protobuf": "^3.0.0",
+    "lodash": "^4.6.1",
+    "minimist": "^1.2.0",
+    "parseArgs": "0.0.2"
+  }
+}
