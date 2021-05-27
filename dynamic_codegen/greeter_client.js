@@ -53,6 +53,9 @@ function main() {
   client.sayHello({ name: user }, function (err, response) {
     console.log("Greeting:", response.message);
   });
+  client.sayHelloAgain({ name: user }, function (err, response) {
+    console.log("Greeting:", response.message);
+  });
 }
 
 main();
