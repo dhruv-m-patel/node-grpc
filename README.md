@@ -22,19 +22,17 @@ There are two ways to generate the code needed to work with protocol buffers in 
 - Run the server
 
   ```sh
-  $ # from this directory
-  $ node ./dynamic_codegen/greeter_server.js &
+  $ npm run dynamic:server
   $ # OR
-  $ node ./static_codegen/greeter_server.js &
+  $ npm run static:server
   ```
 
 - Run the client
 
   ```sh
-  $ # from this directory
-  $ node ./dynamic_codegen/greeter_client.js
+  $ npm run dynamic:client
   $ # OR
-  $ node ./static_codegen/greeter_client.js
+  $ npm run static:client
   ```
 
 [grpc basics: node.js]: https://grpc.io/docs/languages/node/basics
