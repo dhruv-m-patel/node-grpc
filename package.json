@@ -2,12 +2,14 @@
   "name": "grpc-examples",
   "version": "0.1.0",
   "scripts": {
-    "dynamic:server": "node ./dynamic_codegen/greeter_server.js",
-    "dynamic:client": "node ./dynamic_codegen/greeter_client.js",
-    "dynamic:routes:server": "node ./dynamic_codegen/route_guide/route_guide_server.js --db_path=./dynamic_codegen/route_guide/route_guide_db.json",
-    "dynamic:routes:client": "node ./dynamic_codegen/route_guide/route_guide_client.js --db_path=./dynamic_codegen/route_guide/route_guide_db.json",
-    "static:server": "node ./static_codegen/greeter_server.js",
-    "static:client": "node ./static_codegen/greeter_client.js"
+    "dynamic:greeter:server": "node ./dynamic_greeter/server.js",
+    "dynamic:greeter:client": "node ./dynamic_greeter/client.js",
+    "dynamic:routes:server": "node ./dynamic_route_guide/server.js --db_path=./dynamic_route_guide/db.json",
+    "dynamic:routes:client": "node ./dynamic_route_guide/client.js --db_path=./dynamic_route_guide/db.json",
+    "static:greeter:server": "node ./static_greeter/server.js",
+    "static:greeter:client": "node ./static_greeter/client.js",
+    "static:routes:server": "node ./static_route_guide/server.js --db_path=./static_route_guide/db.json",
+    "static:routes:client": "node ./static_route_guide/client.js --db_path=./static_route_guide/db.json"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.1.0",

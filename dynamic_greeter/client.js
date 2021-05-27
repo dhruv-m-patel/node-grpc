@@ -16,8 +16,9 @@
  *
  */
 
-var PROTO_PATH = __dirname + "/../protos/helloworld.proto";
+var PROTO_PATH = __dirname + "/helloworld.proto";
 
+var parseArgs = require("minimist");
 var grpc = require("@grpc/grpc-js");
 var protoLoader = require("@grpc/proto-loader");
 var packageDefinition = protoLoader.loadSync(PROTO_PATH, {
@@ -29,34 +30,32 @@ var packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 });
 var hello_proto = grpc.loadPackageDefinition(packageDefinition).helloworld;
 
-/**
- * Implements the SayHello RPC method.
- */
-function sayHello(call, callback) {
-  callback(null, { message: "Hello " + call.request.name });
-}
-
-function sayHelloAgain(call, callback) {
-  callback(null, { message: "Hello again, " + call.request.name });
-}
-
-/**
- * Starts an RPC server that receives requests for the Greeter service at the
- * sample server port
- */
 function main() {
-  var server = new grpc.Server();
-  server.addService(hello_proto.Greeter.service, {
-    sayHello,
-    sayHelloAgain,
+  var argv = parseArgs(process.argv.slice(2), {
+    string: "target",
   });
-  server.bindAsync(
-    "0.0.0.0:50051",
-    grpc.ServerCredentials.createInsecure(),
-    () => {
-      server.start();
-    }
+  var target;
+  if (argv.target) {
+    target = argv.target;
+  } else {
+    target = "localhost:50051";
+  }
+  var client = new hello_proto.Greeter(
+    target,
+    grpc.credentials.createInsecure()
   );
+  var user;
+  if (argv._.length > 0) {
+    user = argv._[0];
+  } else {
+    user = "world";
+  }
+  client.sayHello({ name: user }, function (err, response) {
+    console.log("Greeting:", response.message);
+  });
+  client.sayHelloAgain({ name: user }, function (err, response) {
+    console.log("Greeting:", response.message);
+  });
 }
 
 main();

@@ -12,29 +12,47 @@ $ npm install
 
 ## Examples
 
-### Dynamic Server and Client
+### Dynamic Greeter
+
+Prints greeting messages
 
 ```sh
-$ npm run dynamic:server
+$ npm run dynamic:greeter:server
 $ # and in another terminal
-$ npm run dynamic:client
+$ npm run dynamic:greeter:client
 ```
 
-### Static Server and Client
+### Static Greeter
+
+Prints greeting messages
 
 ```sh
-$ npm run static:server
+$ npm run static:greeter:server
 $ # And in another terminal
-$ npm run static:client
+$ npm run static:greeter:client
 ```
 
-### Dynamic Route Server and Client (With Streaming RPC)
+### Dynamic Routes Guide (With Streaming RPC)
+
+Prints route guide messages
 
 ```sh
 $ npm run dynamic:routes:server
 $ # and in another terminal
 $ npm run dynamic:routes:client
 ```
+
+### Static Routes Guide (With Streaming RPC)
+
+Prints route guide messages
+
+```sh
+$ npm run static:routes:server
+$ # and in another terminal
+$ npm run static:routes:client
+```
+
+## References
 
 [grpc basics: node.js]: [basics]
 
