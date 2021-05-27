@@ -4,6 +4,8 @@
   "scripts": {
     "dynamic:server": "node ./dynamic_codegen/greeter_server.js",
     "dynamic:client": "node ./dynamic_codegen/greeter_client.js",
+    "dynamic:routes:server": "node ./dynamic_codegen/route_guide/route_guide_server.js --db_path=./dynamic_codegen/route_guide/route_guide_db.json",
+    "dynamic:routes:client": "node ./dynamic_codegen/route_guide/route_guide_client.js --db_path=./dynamic_codegen/route_guide/route_guide_db.json",
     "static:server": "node ./static_codegen/greeter_server.js",
     "static:client": "node ./static_codegen/greeter_client.js"
   },

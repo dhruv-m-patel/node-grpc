@@ -15,25 +15,31 @@ $ cd node-grpc
 $ npm install
 ```
 
-## TRY IT!
+## Examples
 
-There are two ways to generate the code needed to work with protocol buffers in Node.js - one approach uses [Protobuf.js](https://github.com/dcodeIO/ProtoBuf.js/) to dynamically generate the code at runtime, the other uses code statically generated using the protocol buffer compiler `protoc`. The examples behave identically, and either server can be used with either client.
+### Dynamic Server and Client
 
-- Run the server
+```sh
+$ npm run dynamic:server
+$ # and in another terminal
+$ npm run dynamic:client
+```
 
-  ```sh
-  $ npm run dynamic:server
-  $ # OR
-  $ npm run static:server
-  ```
+### Static Server and Client
 
-- Run the client
+```sh
+$ npm run static:server
+$ # And in another terminal
+$ npm run static:client
+```
 
-  ```sh
-  $ npm run dynamic:client
-  $ # OR
-  $ npm run static:client
-  ```
+### Dynamic Route Server and Client
+
+```sh
+$ npm run dynamic:routes:server
+$ # and in another terminal
+$ npm run dynamic:routes:client
+```
 
 [grpc basics: node.js]: https://grpc.io/docs/languages/node/basics
 
