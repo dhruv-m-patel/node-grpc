@@ -2,14 +2,9 @@
 
 A basic example of node-grpc implementation
 
-## PREREQUISITES
-
-- `node`: This requires Node 0.12.x or greater.
-
-## INSTALL
+## Setup
 
 ```sh
-$ # Get the gRPC repository
 $ git clone git@github.com/dhruv-m-patel/node-grpc
 $ cd node-grpc
 $ npm install
@@ -33,7 +28,7 @@ $ # And in another terminal
 $ npm run static:client
 ```
 
-### Dynamic Route Server and Client
+### Dynamic Route Server and Client (With Streaming RPC)
 
 ```sh
 $ npm run dynamic:routes:server
@@ -41,12 +36,14 @@ $ # and in another terminal
 $ npm run dynamic:routes:client
 ```
 
-[grpc basics: node.js]: https://grpc.io/docs/languages/node/basics
+[grpc basics: node.js]: [basics]
 
 For comprehensive documentation, including an [Introduction to gRPC][intro] and
-tutorials that use this example code, visit [grpc.io](https://grpc.io).
+tutorials that use this example code, visit [grpc.io]
 
 For a complete list of supported languages, see [Supported languages][lang].
 
 [intro]: https://grpc.io/docs/what-is-grpc/introduction
 [lang]: https://grpc.io/docs/languages/
+[basics]: https://grpc.io/docs/languages/node/basics
+[grpc.io]: https://grpc.io
